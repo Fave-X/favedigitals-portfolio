@@ -14,7 +14,7 @@ export function SiteHeader() {
           <a
             href="#top"
             className="no-underline text-[17px] font-semibold text-ink"
-            aria-label="FaveDigitals — back to top"
+            aria-label="FaveDigitals, back to top"
           >
             FaveDigitals
           </a>

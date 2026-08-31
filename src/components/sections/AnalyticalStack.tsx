@@ -3,7 +3,7 @@ import { Hairline } from "@/components/ui/Hairline";
 import { STACK_GROUPS } from "@/data/stack";
 
 /**
- * Analytical Stack (knowledge.md §18): three equal groups — mono label,
+ * Analytical Stack (knowledge.md §18): three equal groups (mono label,
  * hairline, plain text rows with subtle separators. No cards, pills, icons,
  * bars or scores. Static server component: fully readable without JavaScript.
  */

@@ -29,7 +29,7 @@ type SectionShellProps = {
 /**
  * Standard section structure: consistent rhythm, header treatment and tones
  * across the site (knowledge.md §14). Portfolio sections provide their own
- * content as children — nothing is populated here yet.
+ * content as children  -  nothing is populated here yet.
  */
 export function SectionShell({
   id,

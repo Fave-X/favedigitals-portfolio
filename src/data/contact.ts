@@ -1,7 +1,7 @@
 import type { ContactChannel } from "@/lib/types";
 
 /**
- * Contact channels (knowledge.md §22) — owner-confirmed public channels only.
+ * Contact channels (knowledge.md §22)  -  owner-confirmed public channels only.
  * No invented accounts, no contact form, no fabricated information.
  */
 export const CONTACT_POSITIONING =

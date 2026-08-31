@@ -1,7 +1,7 @@
 /**
- * About section data (knowledge.md §1, §2, §4, §21). Facts and copy are
- * strictly Web3/on-chain — no dates, years, employers, statistics, or any
- * non-Web3 background (§21, §29).
+ * About section data (knowledge.md §1, §21). Facts and copy are strictly
+ * Web3/on-chain  -  no dates, years, employers, statistics, or any non-Web3
+ * background (§21, §29). Paragraphs are the owner-approved copy, verbatim.
  */
 export const ABOUT_FACTS: { label: string; value: string }[] = [
   { label: "Name", value: "Favour Tabugbo" },
@@ -11,13 +11,8 @@ export const ABOUT_FACTS: { label: string; value: string }[] = [
   { label: "Writing", value: "Paragraph" },
 ];
 
-/** About paragraphs, derived strictly from the established positioning. */
+/** Owner-approved About paragraphs, verbatim. */
 export const ABOUT_COPY: string[] = [
-  "Favour Tabugbo operates publicly through the FaveDigitals identity.",
-  "The journey began with protocol testing across DeFi, blockchain and AI x Web3 protocols — interacting with protocols, exploring their functionality and providing constructive feedback around product and user experience.",
-  "The focus then transitioned toward on-chain data analytics. Today the work centres on analysing on-chain and protocol data, building dashboards and publishing Web3 insights.",
-  "Research and writing are published through Paragraph.",
+  "I’m FaveDigitals, a Web3 data analyst focused on understanding what blockchain activity actually tells us. I work with on-chain data to analyse protocols, track activity, investigate ecosystem behaviour, and turn raw blockchain activity into structured insights and dashboards.",
+  "My approach sits between data analysis and research: I look beyond surface-level numbers to understand what is happening, why it is happening, and what the data can reveal. I publish my findings through dashboards and written research, with a focus on making complex on-chain activity easier to understand and act on.",
 ];
-
-/** Positioning statement (knowledge.md §2) — shown as a restrained pull quote. */
-export const ABOUT_STATEMENT = "I analyse On-Chain Data and I publish insights.";

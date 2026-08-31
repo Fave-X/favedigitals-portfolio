@@ -7,9 +7,9 @@ import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 
 /**
- * Single-page portfolio (knowledge.md §14). Currently: Navigation (layout) +
- * Hero + Selected Work + Analytical Stack + Web3 Journey + Research & Insights
- * + About + Contact. Footer is the only remaining section (§28).
+ * Single-page portfolio (knowledge.md §14): Navigation (layout) + Hero +
+ * Selected Work + Analytical Stack + Web3 Journey + Research & Insights +
+ * About + Contact, with the Footer rendered by the root layout.
  */
 export default function Home() {
   return (

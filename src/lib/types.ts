@@ -1,7 +1,7 @@
 /**
- * Shared content types — machine mirror of knowledge.md §26 (Content Architecture).
+ * Shared content types  -  machine mirror of knowledge.md §26 (Content Architecture).
  * Data files live in src/data/ and are populated only with information
- * provided in knowledge.md (§29 — Content Integrity Rule: nothing is invented).
+ * provided in knowledge.md (§29  -  Content Integrity Rule: nothing is invented).
  */
 
 /** Anchor targets of the single-page portfolio (knowledge.md §14/§15). */
@@ -23,17 +23,23 @@ export interface Project {
   /** Display order marker, e.g. "01". */
   index: string;
   title: string;
-  /** Compact display name for indexes; falls back to title. */
-  shortTitle?: string;
   url: string;
-  /** e.g. "Dune Analytics" — shown only when known. */
+  /** e.g. "Dune Analytics"  -  shown only when known. */
   platform?: string;
   category: string;
   /** Factual one-liner only; no invented findings, metrics or outcomes (§17). */
   description?: string;
-  /** Supplied screenshot (owner-provided). Rendered via next/image with intrinsic dimensions. */
+  /**
+   * Project media (owner-provided). "image" renders via next/image;
+   * "video" renders a native HTML5 video (autoplay, muted, loop, playsInline,
+   * preload="metadata") using the supplied screenshot as poster/fallback.
+   * width/height are intrinsic dimensions and reserve the aspect ratio.
+   */
   media?: {
+    type: "image" | "video";
     src: string;
+    /** Video only: poster image shown before playback and as the no-play fallback. */
+    poster?: string;
     alt: string;
     width: number;
     height: number;
@@ -76,6 +82,8 @@ export interface SiteIdentity {
   role: string;
   /** Primary positioning statement (§2). */
   statement: string;
+  /** Supporting hero sentence (owner-approved hero copy). */
+  supporting: string;
   /** Factual toolkit strip (§8). */
   toolkit: string[];
 }

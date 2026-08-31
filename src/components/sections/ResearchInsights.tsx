@@ -4,7 +4,7 @@ import { MonoLabel } from "@/components/ui/MonoLabel";
 import { RESEARCH_ITEMS } from "@/data/research";
 
 /**
- * Research & Insights (knowledge.md §20) — citation/editorial style, visually
+ * Research & Insights (knowledge.md §20)  -  citation/editorial style, visually
  * distinct from the dashboard projects via a tinted (accent-soft) full-width
  * band with hairline top/bottom borders. Content stays in the standard
  * container. No card treatments, no invented article metadata.
@@ -23,7 +23,7 @@ export function ResearchInsights() {
     >
       {item ? (
         <div className="border-t border-accent/20 pt-8">
-          <MonoLabel tone="accent">{`PUBLICATION — ${item.platform}`}</MonoLabel>
+          <MonoLabel tone="accent">{`PUBLICATION: ${item.platform}`}</MonoLabel>
 
           <h3 className="mt-4 max-w-[30ch] font-serif font-semibold italic tracking-[-0.01em] text-h3 text-ink">
             {item.title}

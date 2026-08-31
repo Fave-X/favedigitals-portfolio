@@ -7,7 +7,7 @@ import { NAV_LINKS } from "@/data/navigation";
 /**
  * Mobile navigation sheet (<768px).
  *
- * Full-screen, solid paper — no blur, no gradient, no decorative effects.
+ * Full-screen, solid paper  -  no blur, no gradient, no decorative effects.
  * Opens/closes instantly (no animation), so it is fully usable with
  * reduced motion enabled. Handles Escape-to-close, focus return, a simple
  * focus trap while open, and body scroll locking.
@@ -21,7 +21,7 @@ export function MobileMenu() {
   useEffect(() => {
     if (!open) return;
 
-    // Capture the trigger element now — refs may change by cleanup time.
+    // Capture the trigger element now  -  refs may change by cleanup time.
     const triggerElement = triggerRef.current;
 
     const handleKeyDown = (event: KeyboardEvent) => {

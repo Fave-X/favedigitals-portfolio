@@ -1,7 +1,7 @@
 import type { StackGroup } from "@/lib/types";
 
 /**
- * Analytical stack (knowledge.md §8/§18 — the exact groups and tools specified).
+ * Analytical stack (knowledge.md §8/§18  -  the exact groups and tools specified).
  * Factual list only: no percentages, proficiency levels, years, ratings, bars,
  * badges, logos or invented tools.
  */

@@ -6,7 +6,7 @@ import { NAV_LINKS } from "@/data/navigation";
 /**
  * Desktop navigation with scroll-spy.
  *
- * Client-side JavaScript is isolated to this component — the links themselves
+ * Client-side JavaScript is isolated to this component  -  the links themselves
  * are plain anchors and keep working without JavaScript. The scroll-spy only
  * adds the visual active state; it never interferes with anchor navigation.
  * Sections that do not exist yet are simply skipped.

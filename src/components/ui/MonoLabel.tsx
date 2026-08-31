@@ -18,7 +18,7 @@ type MonoLabelProps = {
   className?: string;
 };
 
-/** Small mono data label (13px, uppercase, tracked) — eyebrows, meta rows, tags. */
+/** Small mono data label (13px, uppercase, tracked)  -  eyebrows, meta rows, tags. */
 export function MonoLabel({ children, as: Tag = "span", tone = "default", className }: MonoLabelProps) {
   return <Tag className={`mono-label ${toneClasses[tone]} ${className ?? ""}`}>{children}</Tag>;
 }

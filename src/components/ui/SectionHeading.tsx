@@ -27,7 +27,7 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   // "tint" sections use accent-soft backgrounds, where text-muted (≈4.4:1)
-  // falls just below AA for 13px labels — text-ink-2 (≈7.2:1) is used instead.
+  // falls just below AA for 13px labels  -  text-ink-2 (≈7.2:1) is used instead.
   const labelTone =
     tone === "dark" ? "text-paper-on-dark/70" : tone === "tint" ? "text-ink-2" : "text-muted";
   const titleTone = tone === "dark" ? "text-paper-on-dark" : "text-ink";
@@ -37,7 +37,7 @@ export function SectionHeading({
     <div className={`max-w-[65ch] ${className ?? ""}`}>
       <p className={`mono-label ${labelTone}`}>
         {index ? <span className="text-accent">{index}</span> : null}
-        {index ? " — " : null}
+        {index ? ". " : null}
         {eyebrow}
       </p>
       <Tag

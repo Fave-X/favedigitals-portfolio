@@ -32,24 +32,24 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FaveDigitals — Web3 Data Analyst",
+  title: "FaveDigitals: Web3 Data Analyst",
   description:
-    "Portfolio of Favour Tabugbo — FaveDigitals, Web3 Data Analyst. On-chain data analysis, blockchain analytics dashboards and published Web3 research.",
+    "Portfolio of Favour Tabugbo (FaveDigitals), Web3 Data Analyst. On-chain data analysis, blockchain analytics dashboards and published Web3 research.",
   authors: [{ name: "Favour Tabugbo" }],
   creator: "FaveDigitals",
   robots: { index: true, follow: true },
   openGraph: {
-    title: "FaveDigitals — Web3 Data Analyst",
+    title: "FaveDigitals: Web3 Data Analyst",
     description:
-      "I analyse On-Chain Data and I publish insights. On-chain data analysis, analytics dashboards and published Web3 research.",
+      "I analyse blockchain data, investigate protocols, and publish useful insights. On-chain data analysis, analytics dashboards and published Web3 research.",
     type: "website",
-    siteName: "FaveDigitals — Web3 Data Analyst",
+    siteName: "FaveDigitals: Web3 Data Analyst",
     locale: "en_US",
   },
   twitter: {
     card: "summary",
     site: "@FaveDigitalsHQ",
-    title: "FaveDigitals — Web3 Data Analyst",
+    title: "FaveDigitals: Web3 Data Analyst",
     description:
       "On-chain data analysis, analytics dashboards and published Web3 research.",
   },

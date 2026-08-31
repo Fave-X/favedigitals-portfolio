@@ -9,7 +9,7 @@ const footerLinkClasses =
   "no-underline inline-flex items-center px-2 -mx-2 py-2.5 -my-2.5 text-[15px] text-paper-on-dark/70 transition-colors duration-200 hover:text-paper-on-dark focus-visible:outline-paper-on-dark";
 
 /**
- * Site footer (knowledge.md §23) — the single dark band: brand block, section
+ * Site footer (knowledge.md §23): the single dark band. Brand block, section
  * links, back-to-top, and a minimal two-part bottom row. No fabricated
  * achievements or company information.
  */

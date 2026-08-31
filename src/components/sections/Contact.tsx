@@ -53,7 +53,7 @@ function SocialLink({ channel }: { channel: ContactChannel }) {
 }
 
 /**
- * Contact (knowledge.md §22): centered, restrained — icon links for the
+ * Contact (knowledge.md §22): centered, restrained. Icon links for the
  * confirmed social channels plus two deliberate analytics/publishing text
  * links. No form, no backend, no fabricated accounts.
  */

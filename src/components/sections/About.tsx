@@ -1,18 +1,15 @@
 import { SectionShell } from "@/components/layout/SectionShell";
-import { MonoLabel } from "@/components/ui/MonoLabel";
-import { Hairline } from "@/components/ui/Hairline";
-import { ABOUT_FACTS, ABOUT_COPY, ABOUT_STATEMENT } from "@/data/about";
+import { ABOUT_FACTS, ABOUT_COPY } from "@/data/about";
 
 /**
- * About (knowledge.md §21): compact factual identity panel + concise Web3
- * copy, ending in the positioning statement as a restrained serif pull quote.
- * Strictly Web3/on-chain — no non-Web3 background anywhere.
+ * About (knowledge.md §21): compact factual identity panel + the approved
+ * two-paragraph Web3 copy. Strictly Web3/on-chain, no non-Web3 background.
  */
 export function About() {
   return (
     <SectionShell id="about" index="05" eyebrow="ABOUT" title="About">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-8">
-        {/* Fact panel — 3 cols, sticky on desktop */}
+        {/* Fact panel  -  3 cols, sticky on desktop */}
         <div className="lg:col-span-3">
           <div className="border border-line bg-paper lg:sticky lg:top-24">
             <dl className="divide-y divide-line">
@@ -26,7 +23,7 @@ export function About() {
           </div>
         </div>
 
-        {/* Copy — 7 cols */}
+        {/* Copy  -  7 cols */}
         <div className="lg:col-span-7 lg:col-start-6">
           <div className="space-y-4">
             {ABOUT_COPY.map((paragraph) => (
@@ -35,17 +32,6 @@ export function About() {
               </p>
             ))}
           </div>
-
-          <Hairline className="mt-8" />
-
-          <blockquote className="mt-8">
-            <p className="max-w-[24ch] font-serif font-semibold italic tracking-[-0.01em] text-h3 text-ink">
-              {ABOUT_STATEMENT}
-            </p>
-            <MonoLabel className="mt-3" tone="accent">
-              FaveDigitals — Web3 Data Analyst
-            </MonoLabel>
-          </blockquote>
         </div>
       </div>
     </SectionShell>

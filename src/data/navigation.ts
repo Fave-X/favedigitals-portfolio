@@ -1,7 +1,7 @@
 import type { NavLink } from "@/lib/types";
 
 /**
- * Primary navigation (knowledge.md §15 — exact labels and order, exact anchors).
+ * Primary navigation (knowledge.md §15  -  exact labels and order, exact anchors).
  * Single source for both the desktop bar and the mobile sheet.
  */
 export const NAV_LINKS: NavLink[] = [
