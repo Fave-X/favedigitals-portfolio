@@ -1,7 +1,6 @@
 type SectionHeadingTone = "light" | "dark" | "tint";
 
 type SectionHeadingProps = {
-  index?: string;
   eyebrow: string;
   title: string;
   lede?: string;
@@ -13,11 +12,11 @@ type SectionHeadingProps = {
 };
 
 /**
- * Standard section header: mono index + eyebrow, serif title, optional lede.
- * Keeps every section rhythmically identical (knowledge.md §14).
+ * Standard section header: plain-language eyebrow, serif title, optional lede.
+ * Keeps every section rhythmically identical (knowledge.md §14). Section
+ * numbering was deliberately removed from eyebrows (TasteSkill 9.F).
  */
 export function SectionHeading({
-  index,
   eyebrow,
   title,
   lede,
@@ -35,11 +34,7 @@ export function SectionHeading({
 
   return (
     <div className={`max-w-[65ch] ${className ?? ""}`}>
-      <p className={`mono-label ${labelTone}`}>
-        {index ? <span className="text-accent">{index}</span> : null}
-        {index ? ". " : null}
-        {eyebrow}
-      </p>
+      <p className={`mono-label ${labelTone}`}>{eyebrow}</p>
       <Tag
         id={titleId}
         className={`mt-3 font-serif font-semibold tracking-[-0.01em] text-h2 ${titleTone}`}

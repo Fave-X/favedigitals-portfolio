@@ -13,7 +13,6 @@ export function Web3Journey() {
   return (
     <SectionShell
       id="journey"
-      index="03"
       eyebrow="WEB3 JOURNEY"
       title="Web3 Journey"
       lede="From protocol testing to on-chain analytics and published research."

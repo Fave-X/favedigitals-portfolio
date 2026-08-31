@@ -17,7 +17,6 @@ const headingTones: Record<SectionTone, "light" | "dark" | "tint"> = {
 
 type SectionShellProps = {
   id: string;
-  index?: string;
   eyebrow: string;
   title: string;
   lede?: string;
@@ -33,7 +32,6 @@ type SectionShellProps = {
  */
 export function SectionShell({
   id,
-  index,
   eyebrow,
   title,
   lede,
@@ -51,7 +49,6 @@ export function SectionShell({
     >
       <Container className="py-16 md:py-24 lg:py-32">
         <SectionHeading
-          index={index}
           eyebrow={eyebrow}
           title={title}
           lede={lede}

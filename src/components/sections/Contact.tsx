@@ -59,7 +59,7 @@ function SocialLink({ channel }: { channel: ContactChannel }) {
  */
 export function Contact() {
   return (
-    <SectionShell id="contact" index="06" eyebrow="CONTACT" title="Contact" lede={CONTACT_POSITIONING}>
+    <SectionShell id="contact" eyebrow="CONTACT" title="Contact" lede={CONTACT_POSITIONING}>
       <div className="mx-auto max-w-[640px]">
         <ul className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
           {SOCIAL_CHANNELS.map((channel) => (
@@ -76,10 +76,10 @@ export function Contact() {
                 href={channel.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="no-underline mono-label inline-flex items-center gap-1.5 py-2.5 -my-2.5 text-accent transition-colors duration-200 hover:text-ink-2"
+                className="no-underline mono-label inline-flex items-center gap-1.5 py-2.5 -my-2.5 text-accent transition-colors duration-200 hover:text-accent-deep"
               >
                 {channel.label}
-                <ArrowUpRight size={14} aria-hidden="true" />
+                <ArrowUpRight size={14} aria-hidden="true" className="arrow-shift" />
               </a>
             </li>
           ))}

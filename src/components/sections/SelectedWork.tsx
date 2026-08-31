@@ -20,7 +20,7 @@ function ProjectRow({ project }: { project: Project }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${project.title}, ${action} (opens in a new tab)`}
-      className="no-underline group grid grid-cols-1 gap-6 border-b border-line py-10 transition-colors duration-200 hover:border-line-strong hover:bg-surface lg:grid-cols-12 lg:py-12"
+      className="no-underline group grid grid-cols-1 gap-6 border-b border-line py-10 transition-colors duration-200 hover:border-line-strong lg:grid-cols-12 lg:py-12"
     >
       {/* Meta: number + platform (where known) */}
       <div className="flex items-baseline gap-4 lg:col-span-3 lg:flex-col lg:items-start lg:gap-5">
@@ -95,7 +95,7 @@ function ProjectRow({ project }: { project: Project }) {
           <ArrowUpRight
             size={14}
             aria-hidden="true"
-            className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            className="arrow-shift"
           />
         </span>
       </div>
@@ -111,7 +111,6 @@ export function SelectedWork() {
   return (
     <SectionShell
       id="work"
-      index="01"
       eyebrow="SELECTED WORK"
       title="Selected Work"
       lede="Case studies in on-chain analytics: from protocol dashboards to complete on-chain studies."

@@ -15,7 +15,6 @@ export function ResearchInsights() {
   return (
     <SectionShell
       id="research"
-      index="04"
       eyebrow="RESEARCH & INSIGHTS"
       title="Research & Insights"
       lede="Published Web3 research and writing."
@@ -37,10 +36,10 @@ export function ResearchInsights() {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="no-underline mono-label mt-6 inline-flex items-center gap-1.5 py-2.5 -my-2.5 text-accent transition-colors duration-200 hover:text-ink-2"
+            className="no-underline mono-label mt-6 inline-flex items-center gap-1.5 py-2.5 -my-2.5 text-accent transition-colors duration-200 hover:text-accent-deep"
           >
             {`Read on ${new URL(item.url).hostname.replace("www.", "")} `}
-            <ArrowUpRight size={14} aria-hidden="true" />
+            <ArrowUpRight size={14} aria-hidden="true" className="arrow-shift" />
           </a>
         </div>
       ) : null}

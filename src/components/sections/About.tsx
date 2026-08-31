@@ -7,7 +7,7 @@ import { ABOUT_FACTS, ABOUT_COPY } from "@/data/about";
  */
 export function About() {
   return (
-    <SectionShell id="about" index="05" eyebrow="ABOUT" title="About">
+    <SectionShell id="about" eyebrow="ABOUT" title="About">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-8">
         {/* Fact panel  -  3 cols, sticky on desktop */}
         <div className="lg:col-span-3">

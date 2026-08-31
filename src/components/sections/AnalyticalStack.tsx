@@ -11,7 +11,6 @@ export function AnalyticalStack() {
   return (
     <SectionShell
       id="stack"
-      index="02"
       eyebrow="ANALYTICAL STACK"
       title="Analytical Stack"
       lede="Tools I use to collect, analyse and present on-chain data."
