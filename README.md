@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FaveDigitals Portfolio
 
-## Getting Started
+Official portfolio website for **FaveDigitals**, showcasing work in Web3 data analytics, on-chain analysis, blockchain research, and data visualization.
 
-First, run the development server:
+## Live Portfolio
+
+https://favedigitals.vercel.app/
+
+## About
+
+FaveDigitals is the professional portfolio of **Favour Tabugbo**, a Web3 Data Analyst focused on analysing on-chain and protocol data and publishing research-driven insights.
+
+The portfolio presents selected work across:
+
+- On-chain analytics
+- Blockchain data analysis
+- Protocol analytics
+- Data dashboards
+- Web3 research
+- Stablecoin analytics
+
+## Featured Work
+
+### ADI Chain Overview
+
+A 30-day on-chain analysis of ADI Chain covering transaction activity, active addresses, token transfers, holder distribution, and network throughput.
+
+**Tools:** Dune Analytics, SQL
+
+### ADI Chain Live Analytics Dashboard
+
+A live dashboard monitoring ADI Chain network activity and performance metrics.
+
+**Tools:** React, Vite, Tailwind CSS, Chart.js
+
+### L0st n F0und
+
+A complete on-chain analytics study focused on understanding protocol and ecosystem activity.
+
+**Tools:** Dune Analytics, SQL
+
+### Stablecoin On-Chain Analytics
+
+A multi-chain analysis of USDT, USDC, DAI, and EURC covering observed on-chain supply, transfer activity, address activity, chain distribution, and peg stability.
+
+**Tools:** SQL, Dune Analytics, Flipside, blockchain data
+
+**Status:** In Progress
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Git
+- GitHub
+- Vercel
+
+## Analytics Stack
+
+- SQL
+- Python
+- Dune Analytics
+- Flipside
+- Blockscout
+- Arkham
+- Power BI
+
+## Project Structure
+
+The portfolio application is organized around reusable components and sections for:
+
+- Selected Work
+- Analytical Stack
+- Web3 Journey
+- Research & Insights
+- About
+- Contact
+
+## Development
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/Fave-X/favedigitals-portfolio.git
+cd favedigitals-portfolio
