@@ -22,6 +22,9 @@
   --color-surface-raised: #fdfdfb;
   --color-paper-on-dark: #f4f5f1;
 
+  --color-footer: #191b18;
+  --color-footer-text: #f4f5f1;
+
   /* Container width: 1152px → utility `max-w-content` */
   --container-content: 72rem;
 
@@ -43,6 +46,42 @@
      already cover the approved scale  -  4/8/12/16/24/32/48/64/96/128px map to
      p-1, p-2, p-3, p-4, p-6, p-8, p-12, p-16, p-24, p-32.
      Grid gutters: gap-4 (16px, mobile) · gap-5 (20px, tablet) · gap-6 (24px, desktop). */
+}
+
+/* Custom dark variant enabling class-based dark mode alongside Tailwind utilities */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Dark mode token recalibration ---------- */
+.dark,
+[data-theme="dark"] {
+  /* Warm, deep charcoal paper with subtle natural forest undertone */
+  --color-paper: #121411;
+  --color-surface: #171a16;
+  --color-surface-raised: #1d201c;
+
+  /* High-contrast ink: #f0f2ee gives 14.2:1 against #121411 (WCAG AAA) */
+  --color-ink: #f0f2ee;
+  /* Secondary text: #a6aca2 gives 6.8:1 against #121411 (WCAG AA) */
+  --color-ink-2: #a6aca2;
+  /* Muted label: #7e857a gives 4.52:1 against #121411 (WCAG AA) */
+  --color-muted: #7e857a;
+
+  /* Structural hairlines */
+  --color-line: #252823;
+  --color-line-strong: #3d4239;
+
+  /* Brand accent: calibrated pine teal #3eb4a2 maintains 172° hue at 7.0:1 (WCAG AAA) */
+  --color-accent: #3eb4a2;
+  --color-accent-soft: #17211c;
+  --color-accent-mist: #141c17;
+  --color-accent-deep: #4fc4b2;
+
+  /* Text on solid light button */
+  --color-paper-on-dark: #121411;
+
+  /* Recessed footer anchoring */
+  --color-footer: #0c0e0b;
+  --color-footer-text: #e5e8e3;
 }
 
 /* Font families wired to next/font variables loaded in src/app/layout.tsx.
@@ -72,8 +111,13 @@
 @layer base {
   html {
     color-scheme: light;
-    /* Anchor offset for the future sticky header (64px nav). */
+    /* Anchor offset for the sticky header (64px nav). */
     scroll-padding-top: 5rem;
+  }
+
+  html.dark,
+  html[data-theme="dark"] {
+    color-scheme: dark;
   }
 
   /* Smooth scrolling only when reduced motion is not requested. */

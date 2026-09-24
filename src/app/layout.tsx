@@ -63,8 +63,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${sourceSerif.variable} ${plexMono.variable}`}
     >
+      <head>
+        {/* Synchronous theme initialization to prevent flash of wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");var d=window.matchMedia("(prefers-color-scheme: dark)").matches;if(t==="dark"||(!t&&d)){document.documentElement.classList.add("dark");document.documentElement.setAttribute("data-theme","dark")}else{document.documentElement.classList.remove("dark");document.documentElement.setAttribute("data-theme","light")}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body>
         {/* Keyboard users can bypass the navigation. */}
         <a

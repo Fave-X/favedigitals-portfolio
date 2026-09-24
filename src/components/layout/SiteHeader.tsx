@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout/Container";
 import { DesktopNav } from "@/components/layout/DesktopNav";
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 /**
  * Sticky site header: 64px tall, solid paper, 1px bottom hairline.
@@ -19,8 +20,9 @@ export function SiteHeader() {
             FaveDigitals
           </a>
 
-          <div className="flex items-center">
+          <div className="flex items-center gap-3 sm:gap-4">
             <DesktopNav className="hidden md:block" />
+            <ThemeToggle />
             <MobileMenu />
           </div>
         </div>

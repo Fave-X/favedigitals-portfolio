@@ -7,7 +7,7 @@ type MonoLabelTone = "default" | "secondary" | "dark" | "accent";
 const toneClasses: Record<MonoLabelTone, string> = {
   default: "text-muted",
   secondary: "text-ink-2",
-  dark: "text-paper-on-dark/70",
+  dark: "text-footer-text/70",
   accent: "text-accent",
 };
 

@@ -6,21 +6,21 @@ import { NAV_LINKS } from "@/data/navigation";
 import { SITE_IDENTITY } from "@/data/site";
 
 const footerLinkClasses =
-  "no-underline inline-flex items-center px-2 -mx-2 py-2.5 -my-2.5 text-[15px] text-paper-on-dark/70 transition-colors duration-200 hover:text-paper-on-dark focus-visible:outline-paper-on-dark";
+  "no-underline inline-flex items-center px-2 -mx-2 py-2.5 -my-2.5 text-[15px] text-footer-text/70 transition-colors duration-200 hover:text-footer-text focus-visible:outline-footer-text";
 
 /**
- * Site footer (knowledge.md §23): the single dark band. Brand block, section
+ * Site footer (knowledge.md §23): the grounded dark band. Brand block, section
  * links, back-to-top, and a minimal two-part bottom row. No fabricated
  * achievements or company information.
  */
 export function SiteFooter() {
   return (
-    <footer className="bg-ink text-paper-on-dark">
+    <footer className="border-t border-transparent bg-footer text-footer-text dark:border-line">
       <Container>
         <div className="flex flex-col items-center gap-10 py-12 text-center md:flex-row md:items-start md:justify-between md:gap-8 md:py-16 md:text-left">
           {/* Left: brand */}
           <div>
-            <p className="font-serif text-xl font-semibold text-paper-on-dark">
+            <p className="font-serif text-xl font-semibold text-footer-text">
               {SITE_IDENTITY.brand}
             </p>
             <MonoLabel tone="dark" className="mt-2">
@@ -44,7 +44,7 @@ export function SiteFooter() {
           {/* Right: back to top */}
           <a
             href="#top"
-            className="no-underline inline-flex items-center gap-1.5 px-2 -mx-2 py-2.5 -my-2.5 text-[15px] text-paper-on-dark/70 transition-colors duration-200 hover:text-paper-on-dark focus-visible:outline-paper-on-dark"
+            className="no-underline inline-flex items-center gap-1.5 px-2 -mx-2 py-2.5 -my-2.5 text-[15px] text-footer-text/70 transition-colors duration-200 hover:text-footer-text focus-visible:outline-footer-text"
           >
             Back to top
             <ArrowUp size={14} aria-hidden="true" />
