@@ -19,8 +19,24 @@ import type { Project } from "@/lib/types";
  */
 export const PROJECTS: Project[] = [
   {
-    id: "adi-chain-overview",
+    id: "dollar-rails",
     index: "01",
+    title: "Dollar Rails: Stablecoin Intelligence Dashboard",
+    url: "https://dollar-rails.vercel.app/",
+    category: "Stablecoin Analytics / Data Dashboard",
+    description: "A live multi-chain stablecoin dashboard tracking supply, issuance, market share and peg stability across chains and issuers.",
+    media: {
+      type: "video",
+      src: "/media/dollar-rails-walkthrough.mp4",
+      poster: "/projects/dollar-rails.jpg",
+      alt: "Walkthrough of the Dollar Rails stablecoin intelligence dashboard",
+      width: 1920,
+      height: 1080,
+    },
+  },
+  {
+    id: "adi-chain-overview",
+    index: "02",
     title: "ADI Chain Overview",
     url: "https://dune.com/favedigitals/adi-chain-overview",
     platform: "Dune Analytics",
@@ -37,7 +53,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "adi-chain-analytics-dashboard",
-    index: "02",
+    index: "03",
     title: "ADI Chain Live Analytics Dashboard",
     url: "https://adi-dashboard-sandy.vercel.app/",
     category: "On-Chain Analytics / Data Dashboard",
@@ -53,7 +69,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "l0st-n-f0und",
-    index: "03",
+    index: "04",
     title: "L0st n F0und: Complete On-Chain Analytics",
     url: "https://dune.com/favedigitals/l0st-n-f0und-lnf0-complete-on-chain-analytics",
     platform: "Dune Analytics",

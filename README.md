@@ -21,6 +21,12 @@ The portfolio presents selected work across:
 
 ## Featured Work
 
+### Dollar Rails: Stablecoin Intelligence Dashboard
+
+A live multi-chain stablecoin dashboard tracking supply, issuance, market share and peg stability across chains and issuers. Live at https://dollar-rails.vercel.app/
+
+**Tools:** DefiLlama, CoinGecko, Vercel
+
 ### ADI Chain Overview
 
 A 30-day on-chain analysis of ADI Chain covering transaction activity, active addresses, token transfers, holder distribution, and network throughput.
