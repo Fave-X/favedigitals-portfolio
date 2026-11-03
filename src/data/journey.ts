@@ -30,6 +30,10 @@ export const JOURNEY_STAGES: JourneyStage[] = [
     id: "research-published-insights",
     label: "STAGE 03: RESEARCH & PUBLISHED INSIGHTS",
     title: "Research & Published Insights",
-    points: ["Publishes Web3 research on Paragraph.", "Stablecoin research published."],
+    points: [
+      "Publishes Web3 research on Paragraph.",
+      "Stablecoin research published.",
+      "On-chain investigation published.",
+    ],
   },
 ];

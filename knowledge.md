@@ -220,18 +220,22 @@ Do not create fake placeholder projects.
 
 ## 7. Research & Writing
 
-Published research/article:
+Published research/articles (newest first; owner-provided, Nov 2026):
 
-Revenue Defensibility for Stablecoin
+1. Where stablecoins sit isn't where they move (Dollar Rails article)
+   URL: https://paragraph.com/@favedigitals/where-stable-coins-sit-isnt-where-they-move
+   Platform: Paragraph
+   Category: Web3 Research / Stablecoins
 
-URL:
-https://paragraph.com/@favedigitals/revenue-defensibility-for-stablecoin
+2. Following the Binance hack money on Tron
+   URL: https://paragraph.com/@favedigitals/following-the-binance-hack-money-on-tron
+   Platform: Paragraph
+   Category: On-Chain Investigation / Tron
 
-Platform:
-Paragraph
-
-Category:
-Web3 Research / Stablecoins
+3. Revenue Defensibility for Stablecoin
+   URL: https://paragraph.com/@favedigitals/revenue-defensibility-for-stablecoin
+   Platform: Paragraph
+   Category: Web3 Research / Stablecoins
 
 The portfolio should communicate that FaveDigitals does both:
 
@@ -560,13 +564,7 @@ Do not invent employers, dates, protocol counts, or quantified results.
 
 ## 20. Research & Insights
 
-Feature:
-
-Revenue Defensibility for Stablecoin
-
-Link:
-
-https://paragraph.com/@favedigitals/revenue-defensibility-for-stablecoin
+Feature all published articles listed in §7, newest first, each linking to its Paragraph URL.
 
 This section should look like a research/publication area.
 
