@@ -8,22 +8,25 @@
 /* ---------- Design tokens ---------- */
 @theme {
   /* Color tokens (knowledge.md §13  -  restrained, professional, no neon) */
-  --color-paper: #fafaf7;
+  /* Midnight, white and a little orange. Orange is reserved for marks
+     that carry meaning: live state, the lead data series, the hero full stop. */
+  --color-paper: #fafaf8;
   --color-surface: #ffffff;
-  --color-ink: #191b18;
-  --color-ink-2: #4a4f4a;
-  --color-muted: #6b7069;
-  --color-line: #e3e4de;
-  --color-line-strong: #c9ccc3;
-  --color-accent: #175e54;
-  --color-accent-soft: #e9f0ec;
-  --color-accent-mist: #f0f4f1;
-  --color-accent-deep: #11493f;
-  --color-surface-raised: #fdfdfb;
-  --color-paper-on-dark: #f4f5f1;
+  --color-ink: #0d0d0f;
+  --color-ink-2: #45454b;
+  --color-muted: #6b6b71;
+  --color-line: #e4e4e0;
+  --color-line-strong: #c9c9c4;
+  /* #c64a0b keeps 4.6:1 on paper, so it is safe for small text too */
+  --color-accent: #c64a0b;
+  --color-accent-soft: #fcefe6;
+  --color-accent-mist: #f2f2ef;
+  --color-accent-deep: #9a3a08;
+  --color-surface-raised: #f4f4f1;
+  --color-paper-on-dark: #fafaf8;
 
-  --color-footer: #191b18;
-  --color-footer-text: #f4f5f1;
+  --color-footer: #0d0d0f;
+  --color-footer-text: #f5f5f2;
 
   /* Container width: 1152px → utility `max-w-content` */
   --container-content: 72rem;
@@ -54,34 +57,22 @@
 /* ---------- Dark mode token recalibration ---------- */
 .dark,
 [data-theme="dark"] {
-  /* Warm, deep charcoal paper with subtle natural forest undertone */
-  --color-paper: #121411;
-  --color-surface: #171a16;
-  --color-surface-raised: #1d201c;
-
-  /* High-contrast ink: #f0f2ee gives 14.2:1 against #121411 (WCAG AAA) */
-  --color-ink: #f0f2ee;
-  /* Secondary text: #a6aca2 gives 6.8:1 against #121411 (WCAG AA) */
-  --color-ink-2: #a6aca2;
-  /* Muted label: #7e857a gives 4.52:1 against #121411 (WCAG AA) */
-  --color-muted: #7e857a;
-
-  /* Structural hairlines */
-  --color-line: #252823;
-  --color-line-strong: #3d4239;
-
-  /* Brand accent: calibrated pine teal #3eb4a2 maintains 172° hue at 7.0:1 (WCAG AAA) */
-  --color-accent: #3eb4a2;
-  --color-accent-soft: #17211c;
-  --color-accent-mist: #141c17;
-  --color-accent-deep: #4fc4b2;
-
-  /* Text on solid light button */
-  --color-paper-on-dark: #121411;
-
-  /* Recessed footer anchoring */
-  --color-footer: #0c0e0b;
-  --color-footer-text: #e5e8e3;
+  /* Soft midnight, not pure black; off-white, not pure white. */
+  --color-paper: #0d0d0f;
+  --color-surface: #141417;
+  --color-surface-raised: #1a1a1e;
+  --color-ink: #f5f5f2;
+  --color-ink-2: #b4b4ba;
+  --color-muted: #85858c;
+  --color-line: #24242a;
+  --color-line-strong: #3a3a42;
+  --color-accent: #ff6a1f;
+  --color-accent-soft: #2a160b;
+  --color-accent-mist: #18181c;
+  --color-accent-deep: #ff8a4c;
+  --color-paper-on-dark: #0d0d0f;
+  --color-footer: #08080a;
+  --color-footer-text: #e8e8e4;
 }
 
 /* Font families wired to next/font variables loaded in src/app/layout.tsx.
@@ -89,6 +80,8 @@
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  /* Hero headline only: a high-contrast display serif. */
+  --font-display: var(--font-instrument-serif), "Iowan Old Style", Georgia, serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "Cascadia Mono", "Segoe UI Mono", monospace;
 }
 
@@ -146,8 +139,10 @@
   }
 
   /* Accessible default link behavior (components may override deliberately). */
+  /* Orange means "you can click this": links, buttons, active controls. */
   a {
     color: var(--color-accent);
+    text-decoration-color: currentColor;
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
@@ -169,7 +164,7 @@
   }
 
   ::selection {
-    background-color: var(--color-accent-soft);
+    background-color: var(--color-line-strong);
     color: var(--color-ink);
   }
 
@@ -201,4 +196,38 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---------- Hero data panel ---------- */
+.constellation-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  gap: 0.4em;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1;
+  color: var(--color-muted);
+  transition: opacity 150ms ease;
+}
+.constellation-label b {
+  font-weight: 500;
+  color: var(--color-ink-2);
+}
+.constellation-label[data-dim="true"] {
+  opacity: 0.3;
+}
+.constellation-label[data-active="true"] span,
+.constellation-label[data-active="true"] b {
+  color: var(--color-accent);
+}
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.live-dot {
+  animation: live-pulse 2.4s ease-in-out infinite;
 }

@@ -53,8 +53,8 @@ export function DesktopNav({ className }: { className?: string }) {
                 aria-current={isActive ? "true" : undefined}
                 className={`flex items-center text-[15px] transition-colors duration-200 ${
                   isActive
-                    ? "text-ink underline decoration-accent decoration-2 underline-offset-[6px]"
-                    : "no-underline text-muted hover:text-ink focus-visible:text-ink"
+                    ? "text-accent underline decoration-accent decoration-2 underline-offset-[6px]"
+                    : "no-underline text-ink-2 hover:text-accent focus-visible:text-accent"
                 }`}
               >
                 {link.label}

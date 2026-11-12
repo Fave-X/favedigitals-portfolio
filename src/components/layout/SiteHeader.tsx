@@ -1,27 +1,27 @@
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { DesktopNav } from "@/components/layout/DesktopNav";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
-/**
- * Sticky site header: 64px tall, solid paper, 1px bottom hairline.
- * No blur, no transparency, no shadow. Desktop nav ≥768px, menu button below.
- */
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper">
+    <header className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur-sm">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <a
-            href="#top"
-            className="no-underline text-[17px] font-semibold text-ink"
-            aria-label="FaveDigitals, back to top"
-          >
-            FaveDigitals
-          </a>
+          <Link href="/" className="no-underline flex items-baseline gap-2 text-ink hover:text-accent" aria-label="Favour Tabugbo, home">
+            <span className="text-[17px] font-semibold">FaveDigitals</span>
+            <span className="hidden font-mono text-[12px] text-muted sm:inline">/ Favour Tabugbo</span>
+          </Link>
 
           <div className="flex items-center gap-3 sm:gap-4">
             <DesktopNav className="hidden md:block" />
+            <Link
+              href="/#contact"
+              className="no-underline hidden min-h-10 items-center bg-accent px-4 text-[14px] font-medium text-paper transition-colors hover:bg-accent-deep md:inline-flex"
+            >
+              Get in touch
+            </Link>
             <ThemeToggle />
             <MobileMenu />
           </div>

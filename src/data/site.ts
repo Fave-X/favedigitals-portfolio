@@ -1,16 +1,14 @@
-import type { SiteIdentity } from "@/lib/types";
-
-/**
- * Core identity facts (knowledge.md §1, §2 and the owner-approved hero copy).
- * Single source for hero, nav and footer  -  no duplicated identity strings,
- * nothing invented (knowledge.md §29).
- */
-export const SITE_IDENTITY: SiteIdentity = {
+/** Core identity. Single source for hero, header, footer and metadata. */
+export const SITE = {
   name: "Favour Tabugbo",
   brand: "FaveDigitals",
-  role: "Web3 Data Analyst",
-  statement: "I analyse blockchain data, investigate protocols, and publish useful insights.",
+  role: "On-chain data analyst",
+  /** Hero headline. */
+  statement: "I trace where money moves on-chain",
   supporting:
-    "My work spans across analytics, research and data dashboards that help teams understand protocol behavior and user trends.",
-  toolkit: ["Dune Analytics", "Paragraph", "Power BI", "SQL", "Python"],
-};
+    "Stablecoin flows, exploit fund trails and protocol activity, built from public blockchain data and published with the method and the limits.",
+  availability: "Open to remote on-chain analytics and investigations roles",
+  email: "favourtabugbo@gmail.com",
+  location: "Lagos, Nigeria · UTC+1",
+  cv: "/cv/Favour-Tabugbo-Web3-Resume.pdf",
+} as const;

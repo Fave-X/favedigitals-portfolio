@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { IBM_Plex_Mono, Inter, Source_Serif_4 } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { MobileContactBar } from "@/components/layout/MobileContactBar";
 
 /*
  * Typography system (approved specification):
@@ -12,46 +13,51 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
  * - IBM Plex Mono  → data labels (weights 400–500)
  * Source Serif 4 and Inter are variable fonts; IBM Plex Mono is pinned to 400/500.
  */
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const inter = localFont({ src: "./fonts/inter-latin-wght-normal.woff2", variable: "--font-inter", display: "swap" });
+const sourceSerif = localFont({ src: "./fonts/source-serif-4-latin-wght-normal.woff2", variable: "--font-source-serif", display: "swap" });
+const instrumentSerif = localFont({
+  src: [
+    { path: "./fonts/instrument-serif-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/instrument-serif-latin-400-italic.woff2", weight: "400", style: "italic" },
+  ],
+  variable: "--font-instrument-serif",
   display: "swap",
 });
-
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  variable: "--font-source-serif",
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
+const plexMono = localFont({
+  src: [
+    { path: "./fonts/ibm-plex-mono-latin-400-normal.woff2", weight: "400" },
+    { path: "./fonts/ibm-plex-mono-latin-500-normal.woff2", weight: "500" },
+  ],
   variable: "--font-plex-mono",
   display: "swap",
 });
 
+const DESCRIPTION =
+  "Favour Tabugbo (FaveDigitals), on-chain data analyst. Stablecoin dashboards, exploit fund tracing and published research, built from public blockchain data.";
+
 export const metadata: Metadata = {
-  title: "FaveDigitals: Web3 Data Analyst",
-  description:
-    "Portfolio of Favour Tabugbo (FaveDigitals), Web3 Data Analyst. On-chain data analysis, blockchain analytics dashboards and published Web3 research.",
+  metadataBase: new URL("https://favedigitals.vercel.app"),
+  title: {
+    default: "Favour Tabugbo · On-chain data analyst",
+    template: "%s · Favour Tabugbo",
+  },
+  description: DESCRIPTION,
   authors: [{ name: "Favour Tabugbo" }],
   creator: "FaveDigitals",
   robots: { index: true, follow: true },
   openGraph: {
-    title: "FaveDigitals: Web3 Data Analyst",
-    description:
-      "I analyse blockchain data, investigate protocols, and publish useful insights. On-chain data analysis, analytics dashboards and published Web3 research.",
+    title: "Favour Tabugbo · On-chain data analyst",
+    description: DESCRIPTION,
     type: "website",
-    siteName: "FaveDigitals: Web3 Data Analyst",
+    siteName: "FaveDigitals",
     locale: "en_US",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     site: "@FaveDigitalsHQ",
-    title: "FaveDigitals: Web3 Data Analyst",
-    description:
-      "On-chain data analysis, analytics dashboards and published Web3 research.",
+    creator: "@FaveDigitalsHQ",
+    title: "Favour Tabugbo · On-chain data analyst",
+    description: DESCRIPTION,
   },
 };
 
@@ -64,7 +70,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${sourceSerif.variable} ${plexMono.variable}`}
+      className={`${inter.variable} ${sourceSerif.variable} ${instrumentSerif.variable} ${plexMono.variable}`}
     >
       <head>
         {/* Synchronous theme initialization to prevent flash of wrong theme */}
@@ -85,6 +91,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
+        <MobileContactBar />
       </body>
     </html>
   );

@@ -108,10 +108,10 @@ export function MobileMenu() {
                     onClick={() => setOpen(false)}
                     className="no-underline flex items-baseline gap-4 py-4"
                   >
-                    <span className="mono-label text-accent">
+                    <span className="mono-label text-muted">
                       {String(position + 1).padStart(2, "0")}
                     </span>
-                    <span className="font-serif text-[2rem] leading-tight text-ink">
+                    <span className="font-serif text-[2rem] leading-tight text-accent">
                       {link.label}
                     </span>
                   </a>
