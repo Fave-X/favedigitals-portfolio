@@ -5,7 +5,7 @@ import { CHANNELS } from "@/data/contact";
 import { SITE } from "@/data/site";
 
 export function Contact() {
-  const links = CHANNELS.filter((channel) => channel.kind === "external");
+  const links = CHANNELS.filter((channel) => channel.kind === "external" && channel.id !== "dune");
   return (
     <section id="contact" aria-labelledby="contact-title" className="scroll-mt-20 border-t border-line bg-surface-raised">
       <Container className="py-16 md:py-24">

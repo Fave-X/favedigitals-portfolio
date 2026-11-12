@@ -20,17 +20,15 @@ export function Hero() {
             <div className="flex items-center gap-4">
               <Image
                 src="/images/fave-digitals-profile.png"
-                alt="Portrait of Favour Tabugbo"
+                alt="Portrait of FaveDigitals"
                 width={112}
                 height={112}
                 priority
                 className="h-14 w-14 border border-line object-cover grayscale"
               />
               <div className="min-w-0">
-                <p className="text-[15px] font-semibold text-ink">{SITE.name}</p>
-                <p className="mono-label mt-0.5 text-muted">
-                  {SITE.brand} · {SITE.role}
-                </p>
+                <p className="text-[15px] font-semibold text-ink">{SITE.brand}</p>
+                <p className="mono-label mt-0.5 text-muted">{SITE.role}</p>
               </div>
             </div>
 
@@ -38,7 +36,7 @@ export function Hero() {
               id="hero-title"
               className="font-display mt-10 max-w-[13ch] font-normal leading-[0.98] tracking-[-0.015em] text-[clamp(3rem,7.4vw,5.6rem)] text-ink"
             >
-              <span className="sr-only">{SITE.name}: </span>
+              <span className="sr-only">{SITE.brand}: </span>
               I trace where money moves <em className="italic">on-chain</em>
             </h1>
 

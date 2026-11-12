@@ -9,9 +9,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur-sm">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="no-underline flex items-baseline gap-2 text-ink hover:text-accent" aria-label="Favour Tabugbo, home">
+          <Link href="/" className="no-underline flex items-baseline gap-2 text-ink hover:text-accent" aria-label="FaveDigitals, home">
             <span className="text-[17px] font-semibold">FaveDigitals</span>
-            <span className="hidden font-mono text-[12px] text-muted sm:inline">/ Favour Tabugbo</span>
           </Link>
 
           <div className="flex items-center gap-3 sm:gap-4">
