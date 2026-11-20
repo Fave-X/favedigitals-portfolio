@@ -1,155 +1,188 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   FaveDigitals Portfolio  -  Design System Foundation (Stage 2)
-   Source of truth: knowledge.md + approved visual specification.
+   FaveDigitals: The Case File
+   An investigator's dossier read at night. Midnight folder board,
+   warm charcoal case sheets, paper-white ink, manila exhibit tags.
+   One accent, red pen: only on things you can click and on circled
+   findings. The typed (mono) face is for data only: amounts, hashes,
+   case fields. Never decoration.
    ------------------------------------------------------------------ */
 
-/* ---------- Design tokens ---------- */
+/* Day mode: the same file on a desk in daylight (manila and sheet paper). */
 @theme {
-  /* Color tokens (knowledge.md §13  -  restrained, professional, no neon) */
-  /* Midnight, white and a little orange. Orange is reserved for marks
-     that carry meaning: live state, the lead data series, the hero full stop. */
-  --color-paper: #fafaf8;
-  --color-surface: #ffffff;
-  --color-ink: #0d0d0f;
-  --color-ink-2: #45454b;
-  --color-muted: #6b6b71;
-  --color-line: #e4e4e0;
-  --color-line-strong: #c9c9c4;
-  /* #c64a0b keeps 4.6:1 on paper, so it is safe for small text too */
-  --color-accent: #c64a0b;
-  --color-accent-soft: #fcefe6;
-  --color-accent-mist: #f2f2ef;
-  --color-accent-deep: #9a3a08;
-  --color-surface-raised: #f4f4f1;
-  --color-paper-on-dark: #fafaf8;
+  --color-paper: #ece4d2; /* folder board */
+  --color-surface: #f7f2e7; /* case sheet */
+  --color-surface-raised: #e3d9c4;
+  --color-ink: #1b1915;
+  --color-ink-2: #4a453b;
+  --color-muted: #625b4e;
+  --color-line: #d4c9b2;
+  --color-line-strong: #b9ad93;
+  --color-accent: #b3261e; /* red pen */
+  --color-accent-deep: #8c1b15;
+  --color-accent-soft: #f2d8d1;
+  --color-accent-mist: #e5dbc5;
+  --color-on-accent: #fbf7ee;
+  --color-tag: #d8c59b; /* manila tag */
+  --color-tag-ink: #463718;
+  --color-paper-on-dark: #fbf7ee;
+  --color-footer: #1b1915;
+  --color-footer-text: #ece4d2;
 
-  --color-footer: #0d0d0f;
-  --color-footer-text: #f5f5f2;
+  --container-content: 76rem;
 
-  /* Container width: 1152px → utility `max-w-content` */
-  --container-content: 72rem;
-
-  /* Typographic scale (responsive via clamp, per approved spec) */
-  --text-h1: clamp(2.75rem, 6vw, 4.75rem); /* 44px → 76px */
-  --text-h1--line-height: 1.05;
-  --text-h2: clamp(1.75rem, 3vw, 2.5rem); /* 28px → 40px */
-  --text-h2--line-height: 1.15;
-  --text-h3: clamp(1.375rem, 2vw, 1.875rem); /* 22px → 30px */
-  --text-h3--line-height: 1.3;
-  --text-lede: clamp(1rem, 0.95rem + 0.35vw, 1.1875rem); /* 16px → 19px */
-  --text-lede--line-height: 1.65;
-  --text-mono-label: 0.8125rem; /* 13px  -  never larger than 14px */
-  --text-mono-label--line-height: 1.4;
-  --text-mono-label-sm: 0.75rem; /* 12px */
-  --text-mono-label-sm--line-height: 1.4;
-
-  /* Spacing scale note: Tailwind v4's default 4px-based spacing utilities
-     already cover the approved scale  -  4/8/12/16/24/32/48/64/96/128px map to
-     p-1, p-2, p-3, p-4, p-6, p-8, p-12, p-16, p-24, p-32.
-     Grid gutters: gap-4 (16px, mobile) · gap-5 (20px, tablet) · gap-6 (24px, desktop). */
+  --text-h1: clamp(3rem, 8.4vw, 6rem);
+  --text-h1--line-height: 0.92;
+  --text-h2: clamp(2.25rem, 4.6vw, 3.5rem);
+  --text-h2--line-height: 0.95;
+  --text-h3: clamp(1.25rem, 1.6vw, 1.5rem);
+  --text-h3--line-height: 1.25;
+  --text-lede: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+  --text-lede--line-height: 1.6;
+  --text-field: 0.75rem;
+  --text-field--line-height: 1.3;
 }
 
-/* Custom dark variant enabling class-based dark mode alongside Tailwind utilities */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ---------- Dark mode token recalibration ---------- */
+/* Night mode (default): the file under a desk lamp. */
 .dark,
 [data-theme="dark"] {
-  /* Soft midnight, not pure black; off-white, not pure white. */
-  --color-paper: #0d0d0f;
-  --color-surface: #141417;
-  --color-surface-raised: #1a1a1e;
-  --color-ink: #f5f5f2;
-  --color-ink-2: #b4b4ba;
-  --color-muted: #85858c;
-  --color-line: #24242a;
-  --color-line-strong: #3a3a42;
-  --color-accent: #ff6a1f;
-  --color-accent-soft: #2a160b;
-  --color-accent-mist: #18181c;
-  --color-accent-deep: #ff8a4c;
-  --color-paper-on-dark: #0d0d0f;
-  --color-footer: #08080a;
-  --color-footer-text: #e8e8e4;
+  --color-paper: #0a0e15; /* midnight folder board */
+  --color-surface: #16161b; /* case sheet, warm charcoal */
+  --color-surface-raised: #1f1e24;
+  --color-ink: #efe8da; /* paper white */
+  --color-ink-2: #bdb5a6;
+  --color-muted: #938b7c;
+  --color-line: #262833;
+  --color-line-strong: #3b3d4a;
+  --color-accent: #ff6158; /* red pen, 6:1 on the board */
+  --color-accent-deep: #ff8f86;
+  --color-accent-soft: #2b1517;
+  --color-accent-mist: #11151e;
+  --color-on-accent: #0a0e15;
+  --color-tag: #2f2918;
+  --color-tag-ink: #dcc99f;
+  --color-paper-on-dark: #0a0e15;
+  --color-footer: #06090e;
+  --color-footer-text: #d9d1c2;
 }
 
-/* Font families wired to next/font variables loaded in src/app/layout.tsx.
-   `inline` keeps the runtime var() references intact for font loading. */
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
-  /* Hero headline only: a high-contrast display serif. */
-  --font-display: var(--font-instrument-serif), "Iowan Old Style", Georgia, serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, "Cascadia Mono", "Segoe UI Mono", monospace;
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), "Arial Narrow", sans-serif;
+  --font-mono: var(--font-courier-prime), ui-monospace, "Courier New", monospace;
+  --font-serif: var(--font-archivo), "Arial Narrow", sans-serif;
 }
 
-/* ---------- Custom utilities ---------- */
-/* Mono data label: 13px mono, uppercase, tracked. Never larger than 14px. */
-@utility mono-label {
+/* Case titles: condensed, heavy, set like a file label. */
+@utility case-title {
+  font-family: var(--font-display);
+  font-stretch: 72%;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+/* Form field label on the case sheet (labels a value, never a heading). */
+@utility field {
+  font-family: var(--font-sans);
+  font-size: var(--text-field);
+  line-height: var(--text-field--line-height);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* Typed value: amounts, hashes, case numbers. Data only. */
+@utility typed {
   font-family: var(--font-mono);
-  font-size: var(--text-mono-label);
-  line-height: var(--text-mono-label--line-height);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+/* Manila exhibit tag. */
+@utility exhibit-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.25em 0.6em 0.2em;
+  background: var(--color-tag);
+  color: var(--color-tag-ink);
+  font-family: var(--font-display);
+  font-stretch: 80%;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+/* Rubber stamp for status (PUBLISHED, LIVE). Outline only, slightly turned. */
+@utility stamp {
+  display: inline-block;
+  padding: 0.2em 0.5em 0.12em;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-stretch: 85%;
+  font-weight: 800;
+  font-size: 0.75rem;
+  line-height: 1.2;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--color-ink-2);
+  transform: rotate(-2deg);
 }
 
-/* Standardized external-link arrow: shifts up-right when its link is hovered. */
 @utility arrow-shift {
   transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ---------- Base styles ---------- */
 @layer base {
   html {
     color-scheme: light;
-    /* Anchor offset for the sticky header (64px nav). */
     scroll-padding-top: 5rem;
+    scrollbar-color: var(--color-line-strong) var(--color-paper);
   }
-
   html.dark,
   html[data-theme="dark"] {
     color-scheme: dark;
   }
-
-  /* Smooth scrolling only when reduced motion is not requested. */
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;
     }
   }
-
   body {
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-size: 1.0625rem;
-    line-height: 1.65;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
   }
-
-  /* Consistent border behavior: hairline color by default (structure, not decoration). */
   *,
   ::before,
   ::after {
     border-color: var(--color-line);
   }
 
-  /* Accessible default link behavior (components may override deliberately). */
-  /* Orange means "you can click this": links, buttons, active controls. */
+  /* Red pen means "you can click this". */
   a {
     color: var(--color-accent);
-    text-decoration-color: currentColor;
     text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
     text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 150ms ease;
   }
-
   a:hover {
-    text-decoration-thickness: 2px;
+    text-decoration-color: currentColor;
   }
 
   h1,
@@ -158,27 +191,32 @@
   h4 {
     text-wrap: balance;
   }
-
   p {
     text-wrap: pretty;
   }
 
   ::selection {
-    background-color: var(--color-line-strong);
-    color: var(--color-ink);
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
   }
-
-  /* Keyboard focus: visible accent outline, 2px with 2px offset.
-     Browser focus indicators are never removed, only harmonized. */
   :focus-visible {
     outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
+    outline-offset: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-paper);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line-strong);
+    border: 2px solid var(--color-paper);
   }
 }
 
-/* Standardized arrow response on any hovered link (works for plain `a:hover`
-   and `.group:hover` row links alike). Reduced motion is handled by the global
-   reduce block, which zeroes all transition durations. */
 @layer components {
   a:hover .arrow-shift,
   .group:hover .arrow-shift {
@@ -186,7 +224,6 @@
   }
 }
 
-/* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
@@ -196,38 +233,4 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* ---------- Hero data panel ---------- */
-.constellation-label {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: flex;
-  gap: 0.4em;
-  white-space: nowrap;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  line-height: 1;
-  color: var(--color-muted);
-  transition: opacity 150ms ease;
-}
-.constellation-label b {
-  font-weight: 500;
-  color: var(--color-ink-2);
-}
-.constellation-label[data-dim="true"] {
-  opacity: 0.3;
-}
-.constellation-label[data-active="true"] span,
-.constellation-label[data-active="true"] b {
-  color: var(--color-accent);
-}
-
-@keyframes live-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.35; }
-}
-.live-dot {
-  animation: live-pulse 2.4s ease-in-out infinite;
 }

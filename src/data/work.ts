@@ -314,3 +314,8 @@ export function getWork(slug: string): WorkItem | undefined {
 export function workKinds(item: WorkItem): WorkKind[] {
   return [item.kind, ...(item.alsoKinds ?? [])];
 }
+
+/** Exhibit letter for a position in WORK (A, B, C...). */
+export function exhibitLetter(index: number): string {
+  return String.fromCharCode(65 + index);
+}

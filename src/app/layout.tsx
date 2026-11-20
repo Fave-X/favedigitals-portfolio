@@ -7,28 +7,34 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { MobileContactBar } from "@/components/layout/MobileContactBar";
 
 /*
- * Typography system (approved specification):
- * - Source Serif 4 → display headings (used at weights 500–600 in CSS)
- * - Inter          → body/UI (used at weights 400–600 in CSS)
- * - IBM Plex Mono  → data labels (weights 400–500)
- * Source Serif 4 and Inter are variable fonts; IBM Plex Mono is pinned to 400/500.
+ * Typography (The Case File):
+ * - Archivo, condensed via its width axis: case titles and headlines
+ * - Public Sans (the US government forms face): reading and interface
+ * - Courier Prime: typed data only (amounts, hashes, case fields)
+ * All self-hosted so builds never depend on a font CDN.
  */
-const inter = localFont({ src: "./fonts/inter-latin-wght-normal.woff2", variable: "--font-inter", display: "swap" });
-const sourceSerif = localFont({ src: "./fonts/source-serif-4-latin-wght-normal.woff2", variable: "--font-source-serif", display: "swap" });
-const instrumentSerif = localFont({
-  src: [
-    { path: "./fonts/instrument-serif-latin-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/instrument-serif-latin-400-italic.woff2", weight: "400", style: "italic" },
-  ],
-  variable: "--font-instrument-serif",
+const archivo = localFont({
+  src: "./fonts/archivo-latin-wdth-normal.woff2",
+  variable: "--font-archivo",
   display: "swap",
+  weight: "100 900",
+  declarations: [{ prop: "font-stretch", value: "62% 125%" }],
 });
-const plexMono = localFont({
+const publicSans = localFont({
   src: [
-    { path: "./fonts/ibm-plex-mono-latin-400-normal.woff2", weight: "400" },
-    { path: "./fonts/ibm-plex-mono-latin-500-normal.woff2", weight: "500" },
+    { path: "./fonts/public-sans-latin-wght-normal.woff2", style: "normal" },
+    { path: "./fonts/public-sans-latin-wght-italic.woff2", style: "italic" },
   ],
-  variable: "--font-plex-mono",
+  variable: "--font-public-sans",
+  display: "swap",
+  weight: "100 900",
+});
+const courierPrime = localFont({
+  src: [
+    { path: "./fonts/courier-prime-latin-400-normal.woff2", weight: "400" },
+    { path: "./fonts/courier-prime-latin-700-normal.woff2", weight: "700" },
+  ],
+  variable: "--font-courier-prime",
   display: "swap",
 });
 
@@ -70,13 +76,14 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${sourceSerif.variable} ${instrumentSerif.variable} ${plexMono.variable}`}
+      data-theme="dark"
+      className={`dark ${archivo.variable} ${publicSans.variable} ${courierPrime.variable}`}
     >
       <head>
         {/* Synchronous theme initialization to prevent flash of wrong theme */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");var d=window.matchMedia("(prefers-color-scheme: dark)").matches;if(t==="dark"||(!t&&d)){document.documentElement.classList.add("dark");document.documentElement.setAttribute("data-theme","dark")}else{document.documentElement.classList.remove("dark");document.documentElement.setAttribute("data-theme","light")}}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"){document.documentElement.classList.add("dark");document.documentElement.setAttribute("data-theme","dark")}else{document.documentElement.classList.remove("dark");document.documentElement.setAttribute("data-theme","light")}}catch(e){}})();`,
           }}
         />
       </head>

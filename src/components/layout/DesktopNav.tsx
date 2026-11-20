@@ -42,21 +42,21 @@ export function DesktopNav({ className }: { className?: string }) {
 
   return (
     <nav aria-label="Primary" className={className}>
-      <ul className="flex h-16 items-stretch gap-7">
+      <ul className="flex items-end gap-1">
         {NAV_LINKS.map((link) => {
           const isActive = activeId === link.id;
-
           return (
-            <li key={link.id} className="flex items-stretch">
+            <li key={link.id}>
               <a
                 href={link.href}
                 aria-current={isActive ? "true" : undefined}
-                className={`flex items-center text-[15px] transition-colors duration-200 ${
+                className={`relative -mb-px flex h-11 items-center rounded-t-[4px] border border-b-0 px-4 text-[15px] font-semibold no-underline transition-colors duration-150 ${
                   isActive
-                    ? "text-accent underline decoration-accent decoration-2 underline-offset-[6px]"
-                    : "no-underline text-ink-2 hover:text-accent focus-visible:text-accent"
+                    ? "border-line-strong bg-surface text-ink"
+                    : "border-transparent text-accent hover:bg-accent-mist"
                 }`}
               >
+                {isActive ? <span aria-hidden="true" className="absolute inset-x-3 top-0 h-[3px] bg-accent" /> : null}
                 {link.label}
               </a>
             </li>

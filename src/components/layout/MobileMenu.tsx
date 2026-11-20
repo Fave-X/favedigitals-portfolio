@@ -87,7 +87,7 @@ export function MobileMenu() {
           className="fixed inset-0 z-50 flex flex-col bg-paper"
         >
           <div className="flex h-16 items-center justify-between border-b border-line px-6">
-            <span className="text-[17px] font-semibold text-ink">FaveDigitals</span>
+            <span className="case-title text-[1.35rem] text-ink [font-stretch:78%]">FaveDigitals</span>
             <button
               ref={closeButtonRef}
               type="button"
@@ -101,17 +101,14 @@ export function MobileMenu() {
 
           <nav aria-label="Mobile" className="flex-1 overflow-y-auto px-6 py-6">
             <ul className="divide-y divide-line">
-              {NAV_LINKS.map((link, position) => (
+              {NAV_LINKS.map((link) => (
                 <li key={link.id}>
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)}
                     className="no-underline flex items-baseline gap-4 py-4"
                   >
-                    <span className="mono-label text-muted">
-                      {String(position + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-serif text-[2rem] leading-tight text-accent">
+                    <span className="case-title text-[2.25rem] leading-tight text-accent">
                       {link.label}
                     </span>
                   </a>

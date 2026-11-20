@@ -37,10 +37,10 @@ export function FeeChart() {
         <table className="w-full min-w-[38rem] border-collapse text-[14px]">
           <thead>
             <tr className="border-b border-line text-left">
-              <th scope="col" className="mono-label py-2.5 pl-5 pr-3 font-normal text-muted">Chain</th>
-              <th scope="col" className="mono-label w-[46%] py-2.5 pr-3 font-normal text-muted">Typical fee</th>
-              <th scope="col" className="mono-label py-2.5 pr-3 text-right font-normal text-muted">Median transfer</th>
-              <th scope="col" className="mono-label py-2.5 pr-5 text-right font-normal text-muted">Under $1k</th>
+              <th scope="col" className="field py-2.5 pl-5 pr-3 font-semibold">Chain</th>
+              <th scope="col" className="mono-label w-[46%] py-2.5 pr-3 font-semibold">Typical fee</th>
+              <th scope="col" className="field py-2.5 pr-3 text-right font-semibold">Median transfer</th>
+              <th scope="col" className="field py-2.5 pr-5 text-right font-semibold">Under $1k</th>
             </tr>
           </thead>
           <tbody>
@@ -48,7 +48,7 @@ export function FeeChart() {
               <tr key={row.chain} className="border-b border-line last:border-b-0">
                 <th scope="row" className="py-2.5 pl-5 pr-3 text-left font-medium text-ink">
                   {row.chain}
-                  <span className="ml-2 font-mono text-[11px] font-normal text-muted">{row.token}</span>
+                  <span className="ml-2 font-mono text-[12px] text-muted">{row.token}</span>
                 </th>
                 <td className="py-2.5 pr-3">
                   <div className="flex items-center gap-3">
@@ -77,7 +77,7 @@ export function FeeChart() {
                 <div className="flex items-center gap-3">
                   <div className="relative h-4 flex-1">
                     {TICKS.map((tick) => (
-                      <span key={tick} className="absolute -translate-x-1/2 font-mono text-[10px] text-muted" style={{ left: `${pos(tick)}%` }}>
+                      <span key={tick} className="absolute -translate-x-1/2 font-mono text-[11.5px] text-muted" style={{ left: `${pos(tick)}%` }}>
                         ${tick}
                       </span>
                     ))}
@@ -90,7 +90,7 @@ export function FeeChart() {
           </tfoot>
         </table>
       </div>
-      <p className="border-t border-line px-5 py-2.5 font-mono text-[11px] text-muted">
+      <p className="border-t border-line px-5 py-3 text-[13px] text-muted">
         Tron fee is for a sender burning TRX; $4.31 if the recipient has never held USDT. Samples, not full counts.
       </p>
     </figure>

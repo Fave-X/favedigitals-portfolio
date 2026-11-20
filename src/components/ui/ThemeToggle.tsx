@@ -70,7 +70,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       onClick={toggleTheme}
       aria-label={label}
       title={label}
-      className={`flex h-11 w-11 items-center justify-center border border-line bg-paper text-ink-2 transition-colors duration-200 hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-accent ${
+      className={`flex h-10 w-10 items-center justify-center border border-line-strong bg-paper text-ink-2 transition-colors duration-200 hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-accent ${
         className ?? ""
       }`}
     >
