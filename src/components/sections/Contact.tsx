@@ -17,7 +17,7 @@ export function Contact() {
                 Hiring for investigations or on-chain analytics?
               </h2>
               <p className="mt-5 max-w-[50ch] text-lede text-ink-2">
-                Email is the quickest way to reach me. I&apos;m in Lagos (UTC+1), one hour behind Johannesburg.
+                Email is the quickest way to reach me. I&apos;m based in Lagos (UTC+1) and open to remote roles.
               </p>
               <p className="mt-8 field">Email</p>
               <p className="typed mt-1 break-all text-[clamp(1.15rem,2.4vw,1.6rem)] text-ink">{SITE.email}</p>
